@@ -9,11 +9,15 @@
     android:background="@drawable/backgroud"
     android:gravity="center">
 
+    <LinearLayout
+        android:id="@+id/btn_manager"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:clickable="true"/>
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:layout_marginTop="20dp"
             android:src="@drawable/cnvotelogo" />
 
 

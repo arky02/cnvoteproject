@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txt_loginFail;
     CheckBox chk_loginSave;
     LinearLayout linearLayout;
+    LinearLayout btn_manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,17 @@ public class LoginActivity extends AppCompatActivity {
         et_pw = findViewById(R.id.et_pw);
         txt_loginFail = findViewById(R.id.txt_loginFail);
         linearLayout = findViewById(R.id.linearlayout);
+        btn_manager = findViewById(R.id.btn_manager);
 
         linearLayout.setVisibility(View.GONE);
+
+        btn_manager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ManagerActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         btn_login.setOnClickListener(new View.OnClickListener() {
