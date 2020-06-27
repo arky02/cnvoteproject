@@ -1,5 +1,6 @@
 package com.example.cnvoteproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -8,14 +9,18 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.example.cnvoteproject.ViewPagerCards.CardItem;
 import com.example.cnvoteproject.ViewPagerCards.CardPagerAdapter;
 import com.example.cnvoteproject.ViewPagerCards.ShadowTransformer;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     Bitmap image, resize_image, image1, image2, image3, image4,image5, image6;
     ImageView btn_data;
+    boolean parsingDone = true;
+    String[] opinions = new String[12];
 
     private CardPagerAdapter mCardAdapter;
     private ShadowTransformer mCardShadowTransformer;
@@ -48,6 +55,20 @@ public class MainActivity extends AppCompatActivity {
         image6 = BitmapFactory.decodeResource(getResources(), R.drawable.q6_1);
 
         image = BitmapFactory.decodeResource(getResources(), R.drawable.sucess);
+
+        firebaseDatabase.getReference().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Log.e("check data",""+Parsing(snapshot.getValue()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         btn_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +96,27 @@ public class MainActivity extends AppCompatActivity {
         mCardShadowTransformer.enableScaling(true);
 
     }
+
+    public String Parsing(Object o) {
+        String data = o.toString();
+        StringBuffer stringBuffer = new StringBuffer();
+        int check = 0;
+        for (int i = 0; ; i++) {
+            if(data.charAt(i) == '}'){
+                break;
+            }
+            if(check != 0) {
+                stringBuffer.append(data.charAt(i));
+            }
+            if(data.charAt(i) == '{') {
+                check ++;
+            }
+        }
+        parsingDone = false;
+        return stringBuffer.toString();
+    }
+
+    public void setData(String s)
 
     @Override
     public void onBackPressed() {

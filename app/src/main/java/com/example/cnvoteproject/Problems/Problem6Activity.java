@@ -42,18 +42,18 @@ public class Problem6Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_six);
 
-        btn_ok = findViewById(R.id.six_btn_ok);
-        edt_answer = findViewById(R.id.six_edt_answer);
-        btn_home = findViewById(R.id.six_btn_home);
-        viewPager = findViewById(R.id.six_view);
-        adapter = new Adapter6(this);
-        viewPager.setAdapter(adapter);
-        txt = findViewById(R.id.txt6);
-
-
-        mDotsView = (DotsView) findViewById(R.id.six_dotsview_main);
-        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
-        mDotsView.setNumberOfPage(3);
+//        btn_ok = findViewById(R.id.six_btn_ok);
+//        edt_answer = findViewById(R.id.six_edt_answer);
+//        btn_home = findViewById(R.id.six_btn_home);
+//        viewPager = findViewById(R.id.six_view);
+//        adapter = new Adapter6(this);
+//        viewPager.setAdapter(adapter);
+//        txt = findViewById(R.id.txt6);
+//
+//
+//        mDotsView = (DotsView) findViewById(R.id.six_dotsview_main);
+//        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
+//        mDotsView.setNumberOfPage(3);
 
         if( Global.sixthProblem[0] + Global.sixthProblem[1] + Global.sixthProblem[2] == 3){
             txt.setVisibility(View.VISIBLE);

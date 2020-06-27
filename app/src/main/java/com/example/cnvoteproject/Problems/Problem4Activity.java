@@ -40,21 +40,21 @@ public class Problem4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_four);
 
-        btn_ok = findViewById(R.id.four_btn_ok);
-        edt_answer = findViewById(R.id.four_edt_answer);
-        btn_home = findViewById(R.id.four_btn_home);
-        txt = findViewById(R.id.txt4);
-        viewPager = findViewById(R.id.four_view);
-        adapter = new Adapter4(this);
-        viewPager.setAdapter(adapter);
-        if( Global.fourthProblem[0] + Global.fourthProblem[1] + Global.fourthProblem[2] == 3){
-            txt.setVisibility(View.VISIBLE);
-
-        }
-
-        mDotsView = (DotsView) findViewById(R.id.four_dotsview_main);
-        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
-        mDotsView.setNumberOfPage(3);
+//        btn_ok = findViewById(R.id.four_btn_ok);
+//        edt_answer = findViewById(R.id.four_edt_answer);
+//        btn_home = findViewById(R.id.four_btn_home);
+//        txt = findViewById(R.id.txt4);
+//        viewPager = findViewById(R.id.four_view);
+//        adapter = new Adapter4(this);
+//        viewPager.setAdapter(adapter);
+//        if( Global.fourthProblem[0] + Global.fourthProblem[1] + Global.fourthProblem[2] == 3){
+//            txt.setVisibility(View.VISIBLE);
+//
+//        }
+//
+//        mDotsView = (DotsView) findViewById(R.id.four_dotsview_main);
+//        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
+//        mDotsView.setNumberOfPage(3);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

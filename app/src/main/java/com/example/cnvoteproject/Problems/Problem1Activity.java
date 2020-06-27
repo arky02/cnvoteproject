@@ -40,15 +40,15 @@ public class Problem1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_one);
 
-        btn_ok = findViewById(R.id.one_btn_ok);
-        edt_answer = findViewById(R.id.one_edt_answer);
-        btn_home = findViewById(R.id.one_btn_home);
-        viewPager = findViewById(R.id.one_view);
-        adapter = new Adapter(this);
-        txt=findViewById(R.id.txt1);
-        viewPager.setAdapter(adapter);
-
-        mDotsView = (DotsView) findViewById(R.id.one_dotsview_main);
+//        btn_ok = findViewById(R.id.one_btn_ok);
+//        edt_answer = findViewById(R.id.one_edt_answer);
+//        btn_home = findViewById(R.id.one_btn_home);
+//        viewPager = findViewById(R.id.one_view);
+//        adapter = new Adapter(this);
+//        txt=findViewById(R.id.txt1);
+//        viewPager.setAdapter(adapter);
+//
+//        mDotsView = (DotsView) findViewById(R.id.one_dotsview_main);
         mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
         mDotsView.setNumberOfPage(3);
 

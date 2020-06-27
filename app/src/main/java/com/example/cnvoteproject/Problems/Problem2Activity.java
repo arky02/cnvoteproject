@@ -40,17 +40,17 @@ public class Problem2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_two);
 
-        viewPager = findViewById(R.id.two_view);
-        adapter2 = new Adapter2(this);
-        viewPager.setAdapter(adapter2);
-        btn_ok = findViewById(R.id.two_btn_ok);
-        edt_answer = findViewById(R.id.two_edt_answer);
-        btn_home = findViewById(R.id.two_btn_home);
-        txt = findViewById(R.id.txt2);
-
-        mDotsView = (DotsView) findViewById(R.id.two_dotsview_main);
-        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
-        mDotsView.setNumberOfPage(3);
+//        viewPager = findViewById(R.id.two_view);
+//        adapter2 = new Adapter2(this);
+//        viewPager.setAdapter(adapter2);
+//        btn_ok = findViewById(R.id.two_btn_ok);
+//        edt_answer = findViewById(R.id.two_edt_answer);
+//        btn_home = findViewById(R.id.two_btn_home);
+//        txt = findViewById(R.id.txt2);
+//
+//        mDotsView = (DotsView) findViewById(R.id.two_dotsview_main);
+//        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
+//        mDotsView.setNumberOfPage(3);
 
         if( Global.secondProblem[0] + Global.secondProblem[1] + Global.secondProblem[2] == 3){
             txt.setVisibility(View.VISIBLE);

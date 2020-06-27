@@ -40,17 +40,17 @@ public class Problem5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_five);
 
-        btn_ok = findViewById(R.id.five_btn_ok);
-        edt_answer = findViewById(R.id.five_edt_answer);
-        btn_home = findViewById(R.id.five_btn_home);
-        viewPager = findViewById(R.id.five_view);
-        adapter = new Adapter5(this);
-        viewPager.setAdapter(adapter);
-        txt = findViewById(R.id.txt5);
-
-        mDotsView = (DotsView) findViewById(R.id.five_dotsview_main);
-        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
-        mDotsView.setNumberOfPage(3);
+//        btn_ok = findViewById(R.id.five_btn_ok);
+//        edt_answer = findViewById(R.id.five_edt_answer);
+//        btn_home = findViewById(R.id.five_btn_home);
+//        viewPager = findViewById(R.id.five_view);
+//        adapter = new Adapter5(this);
+//        viewPager.setAdapter(adapter);
+//        txt = findViewById(R.id.txt5);
+//
+//        mDotsView = (DotsView) findViewById(R.id.five_dotsview_main);
+//        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
+//        mDotsView.setNumberOfPage(3);
 
         if( Global.fifthProblem[0] + Global.fifthProblem[1] + Global.fifthProblem[2] == 3){
             txt.setVisibility(View.VISIBLE);

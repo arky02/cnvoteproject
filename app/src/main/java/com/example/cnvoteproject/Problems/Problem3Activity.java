@@ -40,17 +40,17 @@ public class Problem3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_three);
 
-        viewPager = findViewById(R.id.three_view);
-        adapter = new Adapter3(this);
-        txt = findViewById(R.id.txt3);
-        viewPager.setAdapter(adapter);
-        btn_ok = findViewById(R.id.three_btn_ok);
-        edt_answer = findViewById(R.id.three_edt_answer);
-        btn_home = findViewById(R.id.three_btn_home);
-
-        mDotsView = (DotsView) findViewById(R.id.three_dotsview_main);
-        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
-        mDotsView.setNumberOfPage(3);
+//        viewPager = findViewById(R.id.three_view);
+//        adapter = new Adapter3(this);
+//        txt = findViewById(R.id.txt3);
+//        viewPager.setAdapter(adapter);
+//        btn_ok = findViewById(R.id.three_btn_ok);
+//        edt_answer = findViewById(R.id.three_edt_answer);
+//        btn_home = findViewById(R.id.three_btn_home);
+//
+//        mDotsView = (DotsView) findViewById(R.id.three_dotsview_main);
+//        mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
+//        mDotsView.setNumberOfPage(3);
 
         if( Global.thirdProblem[0] + Global.thirdProblem[1] + Global.thirdProblem[2] == 3){
             txt.setVisibility(View.VISIBLE);
