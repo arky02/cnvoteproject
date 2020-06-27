@@ -12,8 +12,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cnvoteproject.FirebasePost;
 import com.example.cnvoteproject.MainActivity;
 import com.example.cnvoteproject.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Problem9Activity extends AppCompatActivity {
@@ -31,6 +37,25 @@ public class Problem9Activity extends AppCompatActivity {
 
         btn_home = findViewById(R.id.nine_btn_home);
 
+        btn_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String what = "찬성";
+
+                postFirebaseDatabase(true,9,what);
+            }
+        });
+
+        btn_no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String what = "반대";
+
+                postFirebaseDatabase(true,9,what);
+            }
+        });
+
 
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +64,18 @@ public class Problem9Activity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void postFirebaseDatabase(boolean add,int num, String what){
+        DatabaseReference mPostReference = FirebaseDatabase.getInstance().getReference();
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+        if(add){
+            FirebasePost post = new FirebasePost(num,what);
+            postValues = post.toMap();
+        }
+        childUpdates.put("/찬반 결과/안건 번호" + num, postValues);
+        mPostReference.updateChildren(childUpdates);
     }
     void show()
     {

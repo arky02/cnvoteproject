@@ -18,11 +18,12 @@ import com.example.cnvoteproject.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.ref.Reference;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class Problem10Activity extends AppCompatActivity {
+public class Problem8Activity extends AppCompatActivity {
 
     Button btn_yes,btn_no,btn_home;
 
@@ -30,13 +31,12 @@ public class Problem10Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem10);
+        setContentView(R.layout.activity_problem8);
 
-        btn_yes = findViewById(R.id.ten_btn_yes);
-        btn_no = findViewById(R.id.ten_btn_no);
+        btn_yes = findViewById(R.id.eight_btn_yes);
+        btn_no = findViewById(R.id.eight_btn_no);
 
-        btn_home = findViewById(R.id.ten_btn_home);
-
+        btn_home = findViewById(R.id.eight_btn_home);
 
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +44,7 @@ public class Problem10Activity extends AppCompatActivity {
 
                 String what = "찬성";
 
-                postFirebaseDatabase(true,10,what);
+                postFirebaseDatabase(true,8,what);
             }
         });
 
@@ -53,7 +53,7 @@ public class Problem10Activity extends AppCompatActivity {
             public void onClick(View view) {
                 String what = "반대";
 
-                postFirebaseDatabase(true,10,what);
+                postFirebaseDatabase(true,8,what);
             }
         });
 
