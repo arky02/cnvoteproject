@@ -16,10 +16,6 @@
         <activity android:name=".Problems.Problem11Activity" />
         <activity android:name=".Problems.Problem10Activity" />
         <activity android:name=".Problems.Problem9Activity" />
-        <activity
-            android:name=".Problems.Problem8Activity"
-            android:label="@string/title_activity_problem8"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Problems.Problem7Activity" />
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
