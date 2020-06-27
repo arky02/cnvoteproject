@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Problems.ProblemThreeActivity"
+    tools:context=".Problems.Problem3Activity"
     android:orientation="vertical"
     android:gravity="center|top">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LEVEL 3"
+        android:text="안건 3"
         android:textSize="30sp"
         android:textColor="#363636"
         android:layout_marginBottom="20dp"
@@ -24,57 +24,45 @@
 
     </LinearLayout>
 
-    <view
-        android:id="@+id/three_view"
-        class="androidx.viewpager.widget.ViewPager"
-        android:layout_width="wrap_content"
-        android:layout_height="284dp"
-        android:layout_marginTop="140dp"
-        android:layout_gravity="center_horizontal" />
-    <com.dev.sacot41.scviewpager.DotsView
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/three_dotsview_main"
-        android:layout_marginTop="25dp"
-        />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txt3"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#FFE05D20"
-        android:visibility="gone"/>
+        android:id="@+id/three_context"
+        android:padding="100dp"
+        android:background="@color/cardview_light_background"/>
 
 
-    <com.example.cnvoteproject.ClearEditText
-        android:id="@+id/three_edt_answer"
-        android:layout_width="500dp"
-        android:padding="13sp"
-        android:layout_height="67dp"
-        android:layout_marginTop="115dp"
-        android:background="#ECECEC"
-        android:hint="정답을 입력하세요"
-        android:textColorHint="#707070"
-        android:textSize="30dp"
-        android:textStyle="bold" />
 
-    <Button
-        android:background="@drawable/buttondesign"
-        android:layout_width="500dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:id="@+id/three_btn_ok"
-        android:textSize="25sp"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="15dp"
-        android:text="ok" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:background="@drawable/buttondesignn"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/three_btn_yes"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="15dp"
+            android:text="찬성" />
+        <Button
+            android:background="@drawable/buttondesign"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/three_btn_no"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="15dp"
+            android:text="반대" />
+
+    </LinearLayout>
+
 
     <Button
         android:background="@drawable/buttondesign2"
@@ -86,11 +74,5 @@
         android:textSize="25sp"
         android:textColor="#FFFFFF"/>
 
-    <TextView
-        android:background="@drawable/buttondesign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = ""
-        android:id="@+id/three_answerRight"/>
 
 </LinearLayout>

@@ -8,13 +8,12 @@ import android.os.Handler;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.cnvoteproject.Problems.ProblemFiveActivity;
-import com.example.cnvoteproject.Problems.ProblemFourActivity;
-import com.example.cnvoteproject.Problems.ProblemOneActivity;
-import com.example.cnvoteproject.Problems.ProblemSixActivity;
-import com.example.cnvoteproject.Problems.ProblemThreeActivity;
-import com.example.cnvoteproject.Problems.ProblemTwoActivity;
-import com.example.cnvoteproject.R;
+import com.example.cnvoteproject.Problems.Problem5Activity;
+import com.example.cnvoteproject.Problems.Problem4Activity;
+import com.example.cnvoteproject.Problems.Problem1Activity;
+import com.example.cnvoteproject.Problems.Problem6Activity;
+import com.example.cnvoteproject.Problems.Problem3Activity;
+import com.example.cnvoteproject.Problems.Problem2Activity;
 
 public class SolvedActivity extends AppCompatActivity {
 
@@ -54,32 +53,32 @@ public class SolvedActivity extends AppCompatActivity {
 
                         switch (mintent) {
                             case 1 :
-                                intent.setClass(getApplicationContext(), ProblemOneActivity.class);
+                                intent.setClass(getApplicationContext(), Problem1Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
                             case 2 :
-                                intent.setClass(getApplicationContext(), ProblemTwoActivity.class);
+                                intent.setClass(getApplicationContext(), Problem2Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
                             case 3 :
-                                intent.setClass(getApplicationContext(), ProblemThreeActivity.class);
+                                intent.setClass(getApplicationContext(), Problem3Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
                             case 4 :
-                                intent.setClass(getApplicationContext(), ProblemFourActivity.class);
+                                intent.setClass(getApplicationContext(), Problem4Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
                             case 5 :
-                                intent.setClass(getApplicationContext(), ProblemFiveActivity.class);
+                                intent.setClass(getApplicationContext(), Problem5Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
                             case 6 :
-                                intent.setClass(getApplicationContext(), ProblemSixActivity.class);
+                                intent.setClass(getApplicationContext(), Problem6Activity.class);
                                 startActivity(intent);
                                 finish();
                                 break;
