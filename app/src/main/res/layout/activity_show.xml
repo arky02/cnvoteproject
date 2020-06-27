@@ -1,0 +1,2699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f1f7"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ShowActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/layourdesign"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="100dp"
+                    android:text="내 카드"
+                    android:textColor="#ffffff"
+                    android:textSize="42sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:text="77개"
+                    android:textColor="#ffffff"
+                    android:textSize="68sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="110dp"
+                android:clickable="true"
+                android:src="@drawable/downarrow" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="85dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="37dp"
+                        android:text="카드의 평균"
+                        android:textColor="#FFFCFC"
+                        android:textSize="32dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="3dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="45dp"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/average"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="35dp"
+                        android:text="5000"
+                        android:textColor="#FAF8F8"
+                        android:textSize="30dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:text="95% 신뢰구간"
+                        android:textColor="#FDFDFD"
+                        android:textSize="32dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/range"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="2dp"
+                            android:text="5000"
+                            android:textColor="#EEEDED"
+                            android:textSize="30dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginRight="65dp"
+            android:background="@drawable/layourdesign2"
+            android:orientation="vertical"
+            android:padding="27dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="뽑을 수 있는 카드"
+                    android:id="@+id/lastText"
+                    android:textColor="#000000"
+                    android:textSize="27dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/hide1"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_canPickCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="20개"
+                    android:textColor="#000000"
+                    android:textSize="27dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="          "
+                android:id="@+id/space"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="뽑은 카드"
+                    android:textColor="#000000"
+                    android:id="@+id/txtt2"
+                    android:textSize="27dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="2dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="15dp"
+                    android:id="@+id/hide3"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="#000000"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_pickedCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="20개"
+                    android:textColor="#000000"
+                    android:textSize="27dp" />
+
+            </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:id="@+id/table">
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd1"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx1"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd2"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx2"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd3"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx3"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd4"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx4"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd5"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx5"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd6"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx6"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd7"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx7"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd8"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx8"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd9"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx9"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd10"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="7dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx10"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd11"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx11"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd12"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx12"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd13"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx13"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd14"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx14"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd15"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx15"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd16"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx16"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd17"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx17"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd18"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx18"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd19"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx19"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd20"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx20"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd21"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx21"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd22"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx22"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd23"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx23"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd24"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx24"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd25"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx25"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd26"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx26"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd27"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx27"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd28"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx28"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd29"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx29"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd30"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx30"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd31"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx31"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd32"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx32"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd33"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx33"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd34"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx34"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd35"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx35"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd36"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx36"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd37"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx37"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd38"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx38"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd39"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx39"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd40"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx40"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd41"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx41"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd42"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx42"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd43"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx43"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd44"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx44"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd45"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx45"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd46"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx46"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd47"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx47"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd48"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx48"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd49"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx49"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd50"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="6dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx50"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd51"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx51"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd52"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx52"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd53"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx53"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd54"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx54"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd55"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx55"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd56"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx56"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd57"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx57"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd58"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx58"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd59"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx59"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd60"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx60"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd61"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx61"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd62"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx62"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd63"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx63"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd64"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx64"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd65"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx65"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd66"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx66"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd67"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx67"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd68"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx68"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd69"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx69"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd70"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx70"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd71"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx71"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd72"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx72"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd73"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx73"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd74"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx74"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd75"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx75"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd76"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx76"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd77"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx77"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd78"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx78"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd79"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx79"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+                        <com.wajahatkarim3.easyflipview.EasyFlipView
+                            android:id="@+id/cd80"
+                            android:layout_width="48dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="5dp"
+                            app:autoFlipBack="false"
+                            app:flipDuration="400"
+                            app:flipEnabled="true"
+                            app:flipFrom="right"
+                            app:flipOnTouch="true"
+                            app:flipType="horizontal">
+                            <!-- Back Layout Goes Here -->
+                            <TextView
+                                android:id="@+id/cd_tx80"
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:background="#F2F1F7"
+                                android:gravity="center"
+                                android:textSize="35dp"
+                                android:textStyle="bold" />
+
+                            <!-- Front Layout Goes Here -->
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/card_back" />
+
+
+                        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+                    </TableRow>
+                </TableLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

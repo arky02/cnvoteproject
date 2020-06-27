@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/layourdesign"
+        android:orientation="vertical"
+        android:gravity="center|top"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:clickable="true"
+                android:id="@+id/btn_data"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/graph_icon"
+                android:layout_marginRight="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_marginTop="55dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gta_logo_text"/>
+
+        <TextView
+            android:textSize="28dp"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Guess The Average!"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_marginTop="300dp"
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="730dp"
+        android:layout_gravity="center"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="10dp"
+        android:paddingEnd="@dimen/card_padding"
+        android:paddingLeft="@dimen/card_padding"
+        android:paddingRight="@dimen/card_padding"
+        android:paddingStart="@dimen/card_padding" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

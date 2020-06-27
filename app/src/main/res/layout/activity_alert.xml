@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".AlertActivity"
+    android:background="#E6E6E6">
+
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="750dp"
+        android:layout_gravity="center"
+        android:background="@drawable/layourdesign2"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="현재까지 모은 카드를 \n 뽑으시겠습니까?"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="버튼을 누르면 다시 카드를 모으러\n되돌아 갈 수 없습니다.\n신중하게 눌러주세요!"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#353535" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼을 눌러도 되는지 확신이 들지 않으면 편하게 물어보세요!"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#474747" />
+
+        <Button
+            android:id="@+id/btn_start2"
+            android:layout_marginTop="38dp"
+            android:text="카드 뽑으러 가기!"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="33dp"
+            android:layout_width="550dp"
+            android:layout_height="80dp"
+            android:background="@drawable/buttondesign"/>
+
+    </LinearLayout>
+</LinearLayout>

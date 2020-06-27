@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    
+    <LinearLayout
+        android:layout_width="800dp"
+        android:layout_height="800dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/dialogdesign">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카드를 얻기 위한"
+            android:textSize="50dp"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호를 입력해주세요"
+            android:textSize="50dp"
+            android:textColor="#000000"
+            />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="600dp"
+            android:layout_height="120dp"
+            android:background="#f2f1f7"
+            android:layout_marginTop="20dp"
+            android:textSize="40dp"
+            android:hint="비밀번호를 입력하세요"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="600dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/buttondesign"
+            android:textColor="#ffffff"
+            android:text="START"
+            android:textSize="50dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

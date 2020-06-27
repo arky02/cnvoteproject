@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ServerActivity"
+    android:background="@drawable/backgroud"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="261dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/gta_logo_text" />
+
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:hint="TeamName"
+        android:paddingLeft="20dp"
+        android:textColorHint="#ffffff"
+        android:background="#4Df2f1f7"
+        android:id="@+id/edt_teamName"
+        android:layout_width="350dp"
+        android:layout_height="50dp" />
+
+    <Button
+        android:layout_marginTop="25dp"
+        android:background="@drawable/buttondesign3"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="OK"
+        android:textColor="#f7702e"
+        android:textSize="24sp"
+        android:id="@+id/btn_enter"/>
+
+</LinearLayout>

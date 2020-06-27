@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SolvedActivity"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:background="@drawable/backgroud">
+
+    <ImageView
+        android:layout_marginTop="300dp"
+        android:layout_width="211.9dp"
+        android:layout_height="162dp"
+        android:src="@drawable/check"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct!"
+        android:textColor="#ffffff"
+        android:textSize="73dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 of 3"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginTop="200dp"
+        android:textSize="43sp"/>
+
+    <!--<ImageButton-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:background="#64BCE0"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/homeee"-->
+        <!--android:id="@+id/homebtn"-->
+        <!--android:layout_marginTop="20dp"/>-->
+
+    <ProgressBar
+        android:progressTint="#ffffff"
+        android:id="@+id/progress"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="3"/>
+
+2015
+
+</LinearLayout>

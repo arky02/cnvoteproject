@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mathproject2</string>
+
+    <string name="title_1">LEVEL 1</string>
+    <string name="title_2">LEVEL 2</string>
+    <string name="title_3">LEVEL 3</string>
+    <string name="title_4">LEVEL 4</string>
+    <string name="title_5">LEVEL 5</string>
+    <string name="title_7">"BONUS LEVEL : 액티비티!"</string>
+
+    <string name="title_6">LEVEL 6</string>
+
+    <string name="text_1">  1단계 미리보기 문제입니다.\n아래 버튼을 눌러 1단계 문제에 도전하세요! </string>
+    <string name="text_2">  2단계 미리보기 문제입니다.\n아래 버튼을 눌러 2단계 문제에 도전하세요! </string>
+    <string name="text_3">  3단계 미리보기 문제입니다.\n아래 버튼을 눌러 3단계 문제에 도전하세요! </string>
+    <string name="text_4">  4단계 미리보기 문제입니다.\n아래 버튼을 눌러 4단계 문제에 도전하세요! </string>
+    <string name="text_5">  5단계 미리보기 문제입니다.\n아래 버튼을 눌러 5단계 문제에 도전하세요! </string>
+    <string name="text_6">6단계 미리보기 문제입니다.\n아래 버튼을 눌러 6단계 문제에 도전하세요! </string>
+</resources>
