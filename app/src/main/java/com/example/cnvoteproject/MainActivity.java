@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.cnvoteproject.ViewPagerCards.CardItem;
 import com.example.cnvoteproject.ViewPagerCards.CardPagerAdapter;
@@ -60,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Log.e("check data",""+Parsing(snapshot.getValue()));
+                    if(Parsing(snapshot.getValue()) != "") {
+                        setData(Parsing(snapshot.getValue()));
+                    }
                 }
             }
 
@@ -101,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         String data = o.toString();
         StringBuffer stringBuffer = new StringBuffer();
         int check = 0;
+        if(data.charAt(1) == 'p' && data.charAt(2) == 'w') return "";
         for (int i = 0; ; i++) {
             if(data.charAt(i) == '}'){
                 break;
@@ -116,7 +120,16 @@ public class MainActivity extends AppCompatActivity {
         return stringBuffer.toString();
     }
 
-    public void setData(String s)
+    public void setData(String s){
+        String[] temp = s.split(", ");
+        for (int i = 0; i < 12; i++) {
+            opinions[i] = "";
+        }
+        for (int i = 0; i < temp.length; i++) {
+            String[] temp2 = temp[i].split("=");
+            opinions[i] = temp2[1];
+        }
+    }
 
     @Override
     public void onBackPressed() {
