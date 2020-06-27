@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.dev.sacot41.scviewpager.DotsView;
 
-import com.example.cnvoteproject.Adapters.Adapter6;
+import com.dev.sacot41.scviewpager.DotsView;
+import com.example.cnvoteproject.Adapters.Adapter3;
 import com.example.cnvoteproject.ClearEditText;
 import com.example.cnvoteproject.Global;
 import com.example.cnvoteproject.MainActivity;
@@ -23,39 +23,36 @@ import com.example.cnvoteproject.SolvedActivity;
 import static com.example.cnvoteproject.Global.isOneSolved;
 import static com.example.cnvoteproject.Global.totalScore;
 
-public class ProblemSixActivity extends AppCompatActivity {
+public class Problem3Activity extends AppCompatActivity {
 
     Button btn_ok,btn_home;
     ClearEditText edt_answer;
     String answer;
-    String []correct = new String[]{"17/50", "3/8", "36"};
+    String []correct = new String[]{"10", "3/8", "420"};
     //TODO : 문제 답 업데이트
     ViewPager viewPager;
+    Adapter3 adapter;
     TextView txt;
-    Adapter6 adapter;
     DotsView mDotsView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem_six);
+        setContentView(R.layout.activity_problem_three);
 
-        btn_ok = findViewById(R.id.six_btn_ok);
-        edt_answer = findViewById(R.id.six_edt_answer);
-        btn_home = findViewById(R.id.six_btn_home);
-        viewPager = findViewById(R.id.six_view);
-        adapter = new Adapter6(this);
+        viewPager = findViewById(R.id.three_view);
+        adapter = new Adapter3(this);
+        txt = findViewById(R.id.txt3);
         viewPager.setAdapter(adapter);
-        txt = findViewById(R.id.txt6);
+        btn_ok = findViewById(R.id.three_btn_ok);
+        edt_answer = findViewById(R.id.three_edt_answer);
+        btn_home = findViewById(R.id.three_btn_home);
 
-
-        mDotsView = (DotsView) findViewById(R.id.six_dotsview_main);
+        mDotsView = (DotsView) findViewById(R.id.three_dotsview_main);
         mDotsView.setDotRessource(R.drawable.dot_selected, R.drawable.dot_unselected);
         mDotsView.setNumberOfPage(3);
 
-        if( Global.sixthProblem[0] + Global.sixthProblem[1] + Global.sixthProblem[2] == 3){
+        if( Global.thirdProblem[0] + Global.thirdProblem[1] + Global.thirdProblem[2] == 3){
             txt.setVisibility(View.VISIBLE);
 
         }
@@ -75,59 +72,58 @@ public class ProblemSixActivity extends AppCompatActivity {
             }
         });
 
-
-
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(edt_answer.getText().toString().equals("")) {
-                    Toast.makeText(ProblemSixActivity.this, "정답을 입력해주세요!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Problem3Activity.this, "정답을 입력해주세요!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     answer = edt_answer.getText().toString();
 
                     if(answer.equals(correct[0])) {
-                        if(Global.sixthProblem[0] == 1) {
-                            Toast.makeText(ProblemSixActivity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
+                        if(Global.thirdProblem[0] == 1) {
+                            Toast.makeText(Problem3Activity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
                         }else {
-                            totalScore += 6;
+                            totalScore += 3;
                             isOneSolved = true;
-                            Global.sixthProblem[0] = 1;
+                            Global.thirdProblem[0] = 1;
                             Intent mintent = new Intent(getApplicationContext(), SolvedActivity.class);
-                            mintent.putExtra("whatSolved", 6);
+                            mintent.putExtra("whatSolved", 3);
                             startActivity(mintent);
                             finish();
                         }
                     }
                     else if(answer.equals(correct[1])) {
-                        if(Global.sixthProblem[1] == 1) {
-                            Toast.makeText(ProblemSixActivity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
+                        if(Global.thirdProblem[1] == 1) {
+                            Toast.makeText(Problem3Activity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
                         }else {
-                            totalScore += 6;
+                            totalScore += 3;
                             isOneSolved = true;
-                            Global.sixthProblem[1] = 1;
+                            Global.thirdProblem[1] = 1;
                             Intent mintent = new Intent(getApplicationContext(), SolvedActivity.class);
-                            mintent.putExtra("whatSolved", 6);
+                            mintent.putExtra("whatSolved", 3);
                             startActivity(mintent);
                             finish();
                         }
                     }
                     else if(answer.equals(correct[2])) {
-                        if(Global.sixthProblem[2] == 1) {
-                            Toast.makeText(ProblemSixActivity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
+                        if(Global.thirdProblem[2] == 1) {
+                            Toast.makeText(Problem3Activity.this, "이미 푼 문제입니다!", Toast.LENGTH_SHORT).show();
                         }else {
-                            totalScore += 6;
+                            totalScore += 3;
                             isOneSolved = true;
-                            Global.sixthProblem[2] = 1;
+                            Global.thirdProblem[2] = 1;
                             Intent mintent = new Intent(getApplicationContext(), SolvedActivity.class);
-                            mintent.putExtra("whatSolved", 6);
+                            mintent.putExtra("whatSolved", 3);
                             startActivity(mintent);
                             finish();
                         }
                     }
                     else {
-                        Toast.makeText(ProblemSixActivity.this, "정답이 아닙니다! 다시 한번 생각해보세요", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Problem3Activity.this, "정답이 아닙니다! 다시 한번 생각해보세요", Toast.LENGTH_SHORT).show();
                     }
+
                 }
             }
         });
@@ -151,7 +147,6 @@ public class ProblemSixActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"홈으로 돌아갑니다.",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
-
                     }
                 });
         builder.setNegativeButton("취소",

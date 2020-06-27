@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Problems.Problem2Activity"
+    tools:context=".Problems.Problem7Activity"
     android:orientation="vertical"
     android:gravity="center|top">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="안건 2"
+        android:text="안건 1"
         android:textSize="30sp"
         android:textColor="#363636"
         android:layout_marginBottom="20dp"
@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/two_context"
+        android:id="@+id/seven_context"
         android:padding="100dp"
         android:background="@color/cardview_light_background"/>
 
@@ -43,7 +43,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:id="@+id/two_btn_yes"
+            android:id="@+id/seven_btn_yes"
             android:textSize="25sp"
             android:textColor="#ffffff"
             android:layout_marginBottom="15dp"
@@ -55,7 +55,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
-            android:id="@+id/two_btn_no"
+            android:id="@+id/seven_btn_no"
             android:textSize="25sp"
             android:textColor="#ffffff"
             android:layout_marginBottom="15dp"
@@ -66,13 +66,12 @@
 
     <Button
         android:background="@drawable/buttondesign2"
-        android:id="@+id/two_btn_home"
+        android:id="@+id/seven_btn_home"
         android:layout_width="500dp"
         android:layout_height="60dp"
         android:enabled="true"
         android:text="home"
         android:textSize="25sp"
         android:textColor="#FFFFFF"/>
-
 
 </LinearLayout>

@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Problems.Problem12Activity"></activity>
+        <activity android:name=".Problems.Problem11Activity" />
+        <activity android:name=".Problems.Problem10Activity" />
+        <activity android:name=".Problems.Problem9Activity" />
+        <activity
+            android:name=".Problems.Problem8Activity"
+            android:label="@string/title_activity_problem8"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Problems.Problem7Activity" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".ManagerMainActivity"></activity>
         <activity android:name=".ManagerActivity" />
         <activity android:name=".LoginActivity">
@@ -31,22 +42,22 @@
             android:name=".SolvedActivity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemSixActivity"
+            android:name=".Problems.Problem6Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemFiveActivity"
+            android:name=".Problems.Problem5Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemFourActivity"
+            android:name=".Problems.Problem4Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemThreeActivity"
+            android:name=".Problems.Problem3Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemTwoActivity"
+            android:name=".Problems.Problem2Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
-            android:name=".Problems.ProblemOneActivity"
+            android:name=".Problems.Problem1Activity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"

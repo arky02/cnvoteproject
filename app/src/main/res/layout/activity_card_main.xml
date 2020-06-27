@@ -33,18 +33,13 @@
         </RelativeLayout>
 
         <ImageView
-            android:layout_marginTop="55dp"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/gta_logo_text"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
 
-        <TextView
-            android:textSize="28dp"
-            android:layout_width="wrap_content"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Guess The Average!"
-            android:textColor="#ffffff"/>
+            android:src="@drawable/cnvotelogo"/>
+
 
     </LinearLayout>
 

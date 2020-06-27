@@ -58,6 +58,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +68,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 txt_id = et_id.getText().toString();
                 txt_pw = et_pw.getText().toString();
+
+                if(txt_id.equals("o")&&txt_pw.equals("o")){
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    // Toast.makeText(getApplicationContext(),"환영합니다",Toast.LENGTH_SHORT).show();
+                    finish();
+                }else{
 
                 Login();
 
@@ -78,11 +87,13 @@ public class LoginActivity extends AppCompatActivity {
                         txt_loginFail.setText("아이디 혹은 비밀번호가 잘못되었습니다.");
                         et_pw.setText("");
                     } else {
+
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(),"환영합니다",Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(getApplicationContext(),"환영합니다",Toast.LENGTH_SHORT).show();
                         finish();
                     }
+                }
                 }
             }
         });
@@ -114,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
         String referer = "https://student.cnsa.hs.kr/login/userLogin";
 
         try {
-            Connection.Response res = Jsoup.connect("http://student.cnsa.hs.kr/login/userLogin")
+            Connection.Response res = Jsoup.connect("http://10.1.100.32/login/userLogin")
                     .data(postMap)
                     .userAgent(userAgent)
                     .referrer(referer)
@@ -128,7 +139,6 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 
 
 }

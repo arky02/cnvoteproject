@@ -16,4 +16,5 @@
     <string name="text_4">  4단계 미리보기 문제입니다.\n아래 버튼을 눌러 4단계 문제에 도전하세요! </string>
     <string name="text_5">  5단계 미리보기 문제입니다.\n아래 버튼을 눌러 5단계 문제에 도전하세요! </string>
     <string name="text_6">6단계 미리보기 문제입니다.\n아래 버튼을 눌러 6단계 문제에 도전하세요! </string>
+    <string name="title_activity_problem8">Problem8Activity</string>
 </resources>

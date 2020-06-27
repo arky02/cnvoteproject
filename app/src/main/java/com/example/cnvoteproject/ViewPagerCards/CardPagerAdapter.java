@@ -13,12 +13,12 @@ import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.cnvoteproject.Global;
-import com.example.cnvoteproject.Problems.ProblemFiveActivity;
-import com.example.cnvoteproject.Problems.ProblemFourActivity;
-import com.example.cnvoteproject.Problems.ProblemOneActivity;
-import com.example.cnvoteproject.Problems.ProblemSixActivity;
-import com.example.cnvoteproject.Problems.ProblemThreeActivity;
-import com.example.cnvoteproject.Problems.ProblemTwoActivity;
+import com.example.cnvoteproject.Problems.Problem5Activity;
+import com.example.cnvoteproject.Problems.Problem4Activity;
+import com.example.cnvoteproject.Problems.Problem1Activity;
+import com.example.cnvoteproject.Problems.Problem6Activity;
+import com.example.cnvoteproject.Problems.Problem3Activity;
+import com.example.cnvoteproject.Problems.Problem2Activity;
 import com.example.cnvoteproject.R;
 
 import java.util.ArrayList;
@@ -77,33 +77,33 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
                 switch (position){
                     case 0:
                         Log.d("0", "0");
-                        Intent mintent = new Intent(view.getContext(), ProblemOneActivity.class);
+                        Intent mintent = new Intent(view.getContext(), Problem1Activity.class);
 //                        mintent.putExtra("probNum", "1");
                         view.getContext().startActivity(mintent);
                         break;
                     case 1:
                         Log.d("0", "1");
-                        Intent mintent1 = new Intent(view.getContext(), ProblemTwoActivity.class);
+                        Intent mintent1 = new Intent(view.getContext(), Problem2Activity.class);
                         view.getContext().startActivity(mintent1);
                         break;
                     case 2:
                         Log.d("0", "2");
-                        Intent mintent2 = new Intent(view.getContext(), ProblemThreeActivity.class);
+                        Intent mintent2 = new Intent(view.getContext(), Problem3Activity.class);
                         view.getContext().startActivity(mintent2);
                         break;
                     case 3:
                         Log.d("0", "3");
-                        Intent mintent3 = new Intent(view.getContext(), ProblemFourActivity.class);
+                        Intent mintent3 = new Intent(view.getContext(), Problem4Activity.class);
                         view.getContext().startActivity(mintent3);
                         break;
                     case 4:
                         Log.d("0", "4");
-                        Intent mintent4 = new Intent(view.getContext(), ProblemFiveActivity.class);
+                        Intent mintent4 = new Intent(view.getContext(), Problem5Activity.class);
                         view.getContext().startActivity(mintent4);
                         break;
                     case 5:
                         Log.d("0", "5");
-                        Intent mintent5 = new Intent(view.getContext(), ProblemSixActivity.class);
+                        Intent mintent5 = new Intent(view.getContext(), Problem6Activity.class);
                         view.getContext().startActivity(mintent5);
                         break;
                     case 6:
