@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/backgroud"
+    android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/cnvotelogo" />
+
+
+        <EditText
+            android:layout_marginTop="70dp"
+            android:hint="cnsanet ID"
+            android:paddingLeft="20dp"
+            android:textColorHint="#ffffff"
+            android:background="#4Df2f1f7"
+            android:id="@+id/et_id"
+            android:layout_width="350dp"
+            android:layout_height="50dp" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:hint="cnsanet PW"
+        android:paddingLeft="20dp"
+        android:textColorHint="#ffffff"
+        android:background="#4Df2f1f7"
+        android:id="@+id/et_pw"
+        android:layout_width="350dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_loginFail"/>
+
+    </LinearLayout>
+
+        <Button
+            android:layout_marginTop="25dp"
+            android:background="@drawable/buttondesign3"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="OK"
+            android:textColor="#FFBA00"
+            android:textSize="24sp"
+            android:id="@+id/btn_enter"/>
+
+    </LinearLayout>
