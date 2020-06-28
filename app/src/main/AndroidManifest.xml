@@ -14,6 +14,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ViewPagerCards.DataSettingActivity"></activity>
         <activity android:name=".Problems.Problem8Activity" />
+        <activity android:name=".ShowActivity"></activity>
         <activity android:name=".Problems.Problem12Activity" />
         <activity android:name=".Problems.Problem11Activity" />
         <activity android:name=".Problems.Problem10Activity" />
@@ -30,9 +31,6 @@
         </activity>
         <activity
             android:name=".AlertActivity"
-            android:theme="@style/MaterialTheme.NoActionBar" />
-        <activity
-            android:name=".ShowActivity"
             android:theme="@style/MaterialTheme.NoActionBar" />
         <activity
             android:name=".SolvedActivity"
