@@ -69,7 +69,8 @@ public class ManagerMainActivity extends AppCompatActivity {
         btn_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.child("opinion").setValue(edt_com.getText().toString());
+                databaseReference.child("opinion").setValue(null);
+                databaseReference.child("result").setValue(null);
                 Toast.makeText(getApplicationContext(), "초기화가 완료되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });

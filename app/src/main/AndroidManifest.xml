@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ShowActivity"></activity>
+        <activity android:name=".ViewPagerCards.DataSettingActivity"></activity>
         <activity android:name=".Problems.Problem8Activity" />
+        <activity android:name=".ShowActivity"></activity>
         <activity android:name=".Problems.Problem12Activity" />
         <activity android:name=".Problems.Problem11Activity" />
         <activity android:name=".Problems.Problem10Activity" />

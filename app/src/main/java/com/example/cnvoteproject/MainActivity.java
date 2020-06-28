@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     Bitmap image, resize_image, image1, image2, image3, image4,image5, image6;
     ImageView btn_data;
-    boolean parsingDone = true;
-    String[] opinions = new String[12];
 
     private CardPagerAdapter mCardAdapter;
     private ShadowTransformer mCardShadowTransformer;
@@ -57,22 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         image = BitmapFactory.decodeResource(getResources(), R.drawable.sucess);
 
-        firebaseDatabase.getReference().addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    if(Parsing(snapshot.getValue()) != "") {
-                        setData(Parsing(snapshot.getValue()));
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
         btn_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,16 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mCardAdapter = new CardPagerAdapter();
-        mCardAdapter.addCardItem(new CardItem(R.string.title_1, image1));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_2, image2));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_3, image3));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_4, image4));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_5, image5));
-        mCardAdapter.addCardItem(new CardItem(R.string.title_6, image6));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[0], image1));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[1], image2));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[2], image3));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[3], image4));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[4], image5));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[5], image6));
 
         mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
 
@@ -97,38 +78,6 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setPageTransformer(false, mCardShadowTransformer);
         mViewPager.setOffscreenPageLimit(3);
         mCardShadowTransformer.enableScaling(true);
-
-    }
-
-    public String Parsing(Object o) {
-        String data = o.toString();
-        StringBuffer stringBuffer = new StringBuffer();
-        int check = 0;
-        if(data.charAt(1) == 'p' && data.charAt(2) == 'w') return "";
-        for (int i = 0; ; i++) {
-            if(data.charAt(i) == '}'){
-                break;
-            }
-            if(check != 0) {
-                stringBuffer.append(data.charAt(i));
-            }
-            if(data.charAt(i) == '{') {
-                check ++;
-            }
-        }
-        parsingDone = false;
-        return stringBuffer.toString();
-    }
-
-    public void setData(String s){
-        String[] temp = s.split(", ");
-        for (int i = 0; i < 12; i++) {
-            opinions[i] = "";
-        }
-        for (int i = 0; i < temp.length; i++) {
-            String[] temp2 = temp[i].split("=");
-            opinions[i] = temp2[1];
-        }
     }
 
     @Override

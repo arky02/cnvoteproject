@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 public class CardItem {
 
     private int mTextResource;
-    private int mTitleResource;
+    private String mTitleResource;
     private Bitmap mImageResource;
 
-    public CardItem(int title,Bitmap drawable) {
+    public CardItem(String title,Bitmap drawable) {
         mTitleResource = title;
         mImageResource = drawable;
     }
@@ -20,7 +20,7 @@ public class CardItem {
         return mImageResource;
     }
 
-    public int getTitle() {
+    public String getTitle() {
         return mTitleResource;
     }
 }

@@ -26,5 +26,6 @@ public class Global {
     public static int[] fourthProblem = new int[]{0, 0, 0};
     public static int[] fifthProblem = new int[]{0, 0, 0};
     public static int[] sixthProblem = new int[]{0, 0, 0};
+    public static String[] stringdata = new String[]{"안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다.","안건이 없습니다."};
 
 }
