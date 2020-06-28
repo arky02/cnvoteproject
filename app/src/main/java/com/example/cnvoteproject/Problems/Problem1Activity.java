@@ -80,7 +80,7 @@ public class Problem1Activity extends AppCompatActivity {
                         if(what.equals("")){
                             Toast.makeText(getApplicationContext(),"찬반투표를 진행해주세요",Toast.LENGTH_LONG).show();
                         }else{
-                            databaseReference.child("result").push().setValue("num1"+"/"+what);
+                            databaseReference.child("result").push().setValue("안건1"+"/"+what);
                             finish();
                         }
 

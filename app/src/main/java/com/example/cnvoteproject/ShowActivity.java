@@ -3,7 +3,9 @@ package com.example.cnvoteproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -13,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,40 +32,126 @@ public class ShowActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<Object>();
+    int one_yes=0;
+    int two_yes=0;
+    int three_yes= 0;
+    int four_yes= 0;
+    int five_yes =0;
+    int six_yes =0;
+    int seven_yes = 0;
+    int eight_yes = 0;
+    int nine_yes =0;
+    int ten_yes =0;
+    int eleven_yes = 0;
+    int twelve_yes = 0;
+    int one_no = 0;
+    int two_no = 0;
+    int three_no = 0;
+    int four_no = 0;
+    int five_no = 0;
+    int six_no = 0;
+    int seven_no = 0;
+    int eight_no = 0;
+    int nine_no = 0;
+    int ten_no = 0;
+    int eleven_no = 0;
+    int twelve_no = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
 
-        listView = (ListView) findViewById(R.id.listviewmsg);
 
         initDatabase();
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
-        listView.setAdapter(adapter);
+
         mReference = mDatabase.getReference("result"); // 변경값을 확인할 child 이름
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                adapter.clear();
+
 
                 for (DataSnapshot messageData : dataSnapshot.getChildren()) {
                     String msg2 = messageData.getValue().toString();
 
-                    
-
-
-
                     Array.add(msg2);
-                    adapter.add(msg2);
+                    // child 내에 있는 데이터만큼 반복합니다. for(int i=0;i<Array.size();i++){
+                                if(msg2.equals("안건1/찬성")){
+                                    ++one_yes;
+                                }else if(msg2.equals("안건1/반대")){
+                                    ++one_no;
+                                }else if(msg2.equals("안건2/찬성")){
+                                    ++two_yes;
+                                }else if(msg2.equals("안건2/반대")){
+                                    ++two_no;
+                                }else if(msg2.equals("안건3/찬성")){
+                                    ++three_yes;
+                                }else if(msg2.equals("안건3/반대")){
+                                    ++three_no;
+                                }else if(msg2.equals("안건4/찬성")){
+                                    ++four_yes;
+                                }else if(msg2.equals("안건4/반대")){
+                                    ++four_no;
+                                }else if(msg2.equals("안건5/찬성")){
+                                    ++five_yes;
+                                }else if(msg2.equals("안건5/반대")){
+                                    ++five_no;
+                                }else if(msg2.equals("안건6/찬성")){
+                                    ++six_yes;
+                                }else if(msg2.equals("안건6/반대")){
+                                    ++six_no;
+                                }else if(msg2.equals("안건7/찬성")){
+                                    ++seven_yes;
+                                }else if(msg2.equals("안건7/반대")){
+                                    ++seven_no;
+                                }else if(msg2.equals("안건8/찬성")){
+                                    ++eight_yes;
+                                }else if(msg2.equals("안건8/반대")){
+                                    ++eight_no;
+                                }else if(msg2.equals("안건9/찬성")){
+                                    ++nine_yes;
+                                }else if(msg2.equals("안건9/반대")){
+                                    ++nine_no;
+                                }else if(msg2.equals("안건10/찬성")){
+                                    ++ten_yes;
+                                }else if(msg2.equals("안건10/반대")){
+                                    ++ten_no;
+                                }else if(msg2.equals("안건11/찬성")){
+                                    ++eleven_yes;
+                                }else if(msg2.equals("안건11/반대")){
+                                    ++eleven_no;
+                                }else if(msg2.equals("안건12/찬성")){
+                                    ++twelve_yes;
+                                }else if(msg2.equals("안건12/반대")){
+                                    ++twelve_no;
+                                }
+                            }
 
-                    // child 내에 있는 데이터만큼 반복합니다.
+
+
+                GraphView graph = (GraphView) findViewById(R.id.graph);
+                LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                        new DataPoint(0, 1),
+                        new DataPoint(1, 5),
+                        new DataPoint(2, 3),
+                        new DataPoint(3, 2),
+                        new DataPoint(4, 6)
+                });
+                graph.addSeries(series);
+
+
+                Log.d("one_yes", Integer.toString(one_yes));
+                Log.d("one_no", Integer.toString(one_no));
+                Log.d("2_yes", Integer.toString(two_yes));
+                Log.d("2_no", Integer.toString(two_no));
+                Log.d("3_no", Integer.toString(three_no));
+                Log.d("3_yes", Integer.toString(three_yes));
+
+
 
                 }
-                adapter.notifyDataSetChanged();
-                listView.setSelection(adapter.getCount() - 1);
-            }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -70,11 +161,17 @@ public class ShowActivity extends AppCompatActivity {
 
 
 
+
+
     }
+
+
 
     private void initDatabase() {
 
         mDatabase = FirebaseDatabase.getInstance();
+        mReference = mDatabase.getReference("log");
+        mReference.child("log").setValue("check");
 
         mChild = new ChildEventListener() {
 

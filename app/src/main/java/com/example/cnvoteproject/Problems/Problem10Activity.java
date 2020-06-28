@@ -25,6 +25,9 @@ import java.util.Map;
 public class Problem10Activity extends AppCompatActivity {
 
     Button btn_yes,btn_no,btn_home;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    String what ="";
 
 
     @Override
@@ -42,18 +45,16 @@ public class Problem10Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String what = "찬성";
+                what = "찬성";
 
-                postFirebaseDatabase(true,10,what);
             }
         });
 
         btn_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String what = "반대";
+                what = "반대";
 
-                postFirebaseDatabase(true,10,what);
             }
         });
 
@@ -67,28 +68,21 @@ public class Problem10Activity extends AppCompatActivity {
 
     }
 
-    public void postFirebaseDatabase(boolean add,int num, String what){
-        DatabaseReference mPostReference = FirebaseDatabase.getInstance().getReference();
-        Map<String, Object> childUpdates = new HashMap<>();
-        Map<String, Object> postValues = null;
-        if(add){
-            FirebasePost post = new FirebasePost(num,what);
-            postValues = post.toMap();
-        }
-        childUpdates.put("/찬반 결과/안건 번호" + num, postValues);
-        mPostReference.updateChildren(childUpdates);
-    }
     void show()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("홈으로 돌아갑니다");
-        builder.setMessage("홈으로 돌아가시겠습니까?");
+        builder.setTitle("투표를 결정하시겠습니까?");
+        builder.setMessage("투표결정 이후에는 다시 선택할 수 없습니다.");
         builder.setPositiveButton("예",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"홈으로 돌아갑니다.",Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+                        if(what.equals("")){
+                            Toast.makeText(getApplicationContext(),"찬반투표를 진행해주세요",Toast.LENGTH_LONG).show();
+                        }else{
+                            databaseReference.child("result").push().setValue("안건10"+"/"+what);
+                            finish();
+                        }
+
                     }
                 });
         builder.setNegativeButton("취소",
