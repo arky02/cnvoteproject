@@ -1,5 +1,6 @@
 package com.example.cnvoteproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.cnvoteproject.ViewPagerCards.DataSettingActivity;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,6 +41,11 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox chk_loginSave;
     LinearLayout linearLayout;
     LinearLayout btn_manager;
+    boolean parsingDone = true;
+    String[] opinions = new String[12];
+
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                 txt_pw = et_pw.getText().toString();
 
                 if(txt_id.equals("o")&&txt_pw.equals("o")){
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), DataSettingActivity.class);
                     startActivity(intent);
                     // Toast.makeText(getApplicationContext(),"환영합니다",Toast.LENGTH_SHORT).show();
                     finish();
@@ -87,8 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         txt_loginFail.setText("아이디 혹은 비밀번호가 잘못되었습니다.");
                         et_pw.setText("");
                     } else {
-
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), DataSettingActivity.class);
                         startActivity(intent);
                         // Toast.makeText(getApplicationContext(),"환영합니다",Toast.LENGTH_SHORT).show();
                         finish();
@@ -139,7 +153,5 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
 }
 
