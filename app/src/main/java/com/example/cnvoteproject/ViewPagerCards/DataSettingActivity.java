@@ -103,7 +103,7 @@ public class DataSettingActivity extends AppCompatActivity {
 
     public void setData(String s){
         String[] temp = s.split(", ");
-
+        Global.length = temp.length;
         for (int i = 0; i < temp.length; i++) {
             String[] temp2 = temp[i].split("=");
             Global.stringdata[i] = temp2[1];
