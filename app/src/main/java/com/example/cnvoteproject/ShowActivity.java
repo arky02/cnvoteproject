@@ -4,11 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +36,7 @@ public class ShowActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<Object>();
+
     int one_yes=0;
     int two_yes=0;
     int three_yes= 0;
@@ -57,10 +62,18 @@ public class ShowActivity extends AppCompatActivity {
     int eleven_no = 0;
     int twelve_no = 0;
 
+    BarChart stackedChart;
+    int[] colorArray = new int[]{Color.BLUE,Color.RED};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
+
+        stackedChart = findViewById(R.id.chart);
+
+        BarDataSet bardataset = new BarDataSet(dataValues1(), "BarSEt");
+        bardataset.setColors(colorArray);
 
 
         initDatabase();
@@ -130,15 +143,9 @@ public class ShowActivity extends AppCompatActivity {
 
 
 
-                GraphView graph = (GraphView) findViewById(R.id.graph);
-                LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                        new DataPoint(0, 1),
-                        new DataPoint(1, 5),
-                        new DataPoint(2, 3),
-                        new DataPoint(3, 2),
-                        new DataPoint(4, 6)
-                });
-                graph.addSeries(series);
+
+
+
 
 
                 Log.d("one_yes", Integer.toString(one_yes));
@@ -206,5 +213,18 @@ public class ShowActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         mReference.removeEventListener(mChild);
+    }
+
+    private ArrayList<BarEntry> dataValues1(){
+        ArrayList<BarEntry> datavals = new ArrayList<>();
+
+
+
+
+
+        datavals.add(new BarEntry(0, new float[]{2,5,4}));
+
+
+        return datavals;
     }
 }

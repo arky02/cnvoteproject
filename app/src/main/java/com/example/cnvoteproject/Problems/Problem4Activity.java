@@ -9,10 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cnvoteproject.FirebasePost;
+import com.example.cnvoteproject.Global;
 import com.example.cnvoteproject.MainActivity;
 import com.example.cnvoteproject.R;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,8 @@ public class Problem4Activity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     String what ="";
+    LinearLayout four_1,four_2;
+    boolean real = false;
 
 
     @Override
@@ -36,13 +40,22 @@ public class Problem4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_problem_four);
 
         btn_yes = findViewById(R.id.four_btn_yes);
+        four_1 =findViewById(R.id.four_1);
+        four_2= findViewById(R.id.four_2);
         btn_no = findViewById(R.id.four_btn_no);
         btn_home = findViewById(R.id.four_btn_home);
+
+        if(Global.real1){
+            four_1.setVisibility(View.GONE);
+            four_2.setVisibility(View.VISIBLE);
+        }
+
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 what = "찬성";
+                Toast.makeText(getApplicationContext(), "찬성을 선택히였습니다.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -51,6 +64,7 @@ public class Problem4Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 what = "반대";
+                Toast.makeText(getApplicationContext(), "반대를 선택히였습니다.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -77,6 +91,7 @@ public class Problem4Activity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"찬반투표를 진행해주세요",Toast.LENGTH_LONG).show();
                         }else{
                             databaseReference.child("result").push().setValue("안건4"+"/"+what);
+                           Global.real4 = true;
                             finish();
                         }
 

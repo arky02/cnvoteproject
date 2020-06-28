@@ -9,10 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cnvoteproject.FirebasePost;
+import com.example.cnvoteproject.Global;
 import com.example.cnvoteproject.MainActivity;
 import com.example.cnvoteproject.R;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.view.View.GONE;
+
 
 public class Problem5Activity extends AppCompatActivity {
 
@@ -28,6 +32,8 @@ public class Problem5Activity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     String what ="";
+    LinearLayout five_1,five_2;
+    boolean real = false;
 
 
     @Override
@@ -38,12 +44,21 @@ public class Problem5Activity extends AppCompatActivity {
         btn_yes = findViewById(R.id.five_btn_yes);
         btn_home = findViewById(R.id.five_btn_home);
         btn_no = findViewById(R.id.five_btn_no);
+        five_1 =findViewById(R.id.five_1);
+        five_2 = findViewById(R.id.five_2);
+
+        if(Global.real5){
+            five_1.setVisibility(View.GONE);
+            five_2.setVisibility(View.VISIBLE);
+        }
+
 
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 what = "찬성";
+                Toast.makeText(getApplicationContext(), "찬성을 선택히였습니다.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -51,7 +66,8 @@ public class Problem5Activity extends AppCompatActivity {
         btn_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String what = "반대";
+                what = "반대";
+                Toast.makeText(getApplicationContext(), "반대를 선택히였습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -77,6 +93,7 @@ public class Problem5Activity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"찬반투표를 진행해주세요",Toast.LENGTH_LONG).show();
                         }else{
                             databaseReference.child("result").push().setValue("안건5"+"/"+what);
+                            Global.real5 = true;
                             finish();
                         }
 

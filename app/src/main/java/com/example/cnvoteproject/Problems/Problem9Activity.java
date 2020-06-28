@@ -9,12 +9,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cnvoteproject.FirebasePost;
+import com.example.cnvoteproject.Global;
 import com.example.cnvoteproject.MainActivity;
 import com.example.cnvoteproject.R;
+import com.google.android.gms.common.internal.GmsLogger;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +31,8 @@ public class Problem9Activity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     String what ="";
+    LinearLayout nine_1,nine_2;
+    boolean real = false;
 
 
     @Override
@@ -37,14 +42,22 @@ public class Problem9Activity extends AppCompatActivity {
 
         btn_yes = findViewById(R.id.nine_btn_yes);
         btn_no = findViewById(R.id.nine_btn_no);
-
+        nine_1 =findViewById(R.id.nine_1);
+        nine_2 = findViewById(R.id.nine_2);
         btn_home = findViewById(R.id.nine_btn_home);
+
+        if(Global.real9){
+            nine_1.setVisibility(View.GONE);
+            nine_2.setVisibility(View.VISIBLE);
+        }
+
 
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 what = "찬성";
+                Toast.makeText(getApplicationContext(), "찬성을 선택히였습니다.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -53,6 +66,7 @@ public class Problem9Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 what = "반대";
+                Toast.makeText(getApplicationContext(), "반대를 선택히였습니다.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -78,6 +92,7 @@ public class Problem9Activity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"찬반투표를 진행해주세요",Toast.LENGTH_LONG).show();
                         }else{
                             databaseReference.child("result").push().setValue("안건9"+"/"+what);
+                            Global.real9 = true;
                             finish();
                         }
 
