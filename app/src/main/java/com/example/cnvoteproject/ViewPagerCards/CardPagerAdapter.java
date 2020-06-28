@@ -13,12 +13,18 @@ import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.cnvoteproject.Global;
+import com.example.cnvoteproject.Problems.Problem10Activity;
+import com.example.cnvoteproject.Problems.Problem11Activity;
+import com.example.cnvoteproject.Problems.Problem12Activity;
 import com.example.cnvoteproject.Problems.Problem5Activity;
 import com.example.cnvoteproject.Problems.Problem4Activity;
 import com.example.cnvoteproject.Problems.Problem1Activity;
 import com.example.cnvoteproject.Problems.Problem6Activity;
 import com.example.cnvoteproject.Problems.Problem3Activity;
 import com.example.cnvoteproject.Problems.Problem2Activity;
+import com.example.cnvoteproject.Problems.Problem7Activity;
+import com.example.cnvoteproject.Problems.Problem8Activity;
+import com.example.cnvoteproject.Problems.Problem9Activity;
 import com.example.cnvoteproject.R;
 
 import java.util.ArrayList;
@@ -107,11 +113,29 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
                         view.getContext().startActivity(mintent5);
                         break;
                     case 6:
-                        if (Global.isActivity) {
-                            //enable
-                            break;
-                        }
-
+                        Intent mintent6 = new Intent(view.getContext(), Problem7Activity.class);
+                        view.getContext().startActivity(mintent6);
+                        break;
+                    case 7:
+                        Intent mintent7 = new Intent(view.getContext(), Problem8Activity.class);
+                        view.getContext().startActivity(mintent7);
+                        break;
+                    case 8:
+                        Intent mintent8 = new Intent(view.getContext(), Problem9Activity.class);
+                        view.getContext().startActivity(mintent8);
+                        break;
+                    case 9:
+                        Intent mintent9 = new Intent(view.getContext(), Problem10Activity.class);
+                        view.getContext().startActivity(mintent9);
+                        break;
+                    case 10:
+                        Intent mintent10 = new Intent(view.getContext(), Problem11Activity.class);
+                        view.getContext().startActivity(mintent10);
+                        break;
+                    case 11:
+                        Intent mintent11 = new Intent(view.getContext(), Problem12Activity.class);
+                        view.getContext().startActivity(mintent11);
+                        break;
 
                 }
 

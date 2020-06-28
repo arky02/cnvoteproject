@@ -62,15 +62,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+        
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mCardAdapter = new CardPagerAdapter();
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[0], image1));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[1], image2));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[2], image3));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[3], image4));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[4], image5));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[5], image6));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[0], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[1], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[2], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[3], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[4], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[5], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[6], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[7], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[8], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[9], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[10], null));
+        mCardAdapter.addCardItem(new CardItem(Global.stringdata[11], null));
 
         mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
 
