@@ -41,12 +41,12 @@ public class Problem2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem_two);
 
-        btn_yes = findViewById(R.id.one_btn_yes);
-        btn_no = findViewById(R.id.one_btn_no);
+        btn_yes = findViewById(R.id.two_btn_yes);
+        btn_no = findViewById(R.id.two_btn_no);
         two_1 =findViewById(R.id.two_1);
         two_2 = findViewById(R.id.two_2);
 
-        btn_home = findViewById(R.id.one_btn_home);
+        btn_home = findViewById(R.id.two_btn_home);
 
         if(Global.real2){
             two_1.setVisibility(View.GONE);

@@ -61,6 +61,7 @@ public class ShowActivity extends AppCompatActivity {
     int ten_no = 0;
     int eleven_no = 0;
     int twelve_no = 0;
+    int[] yn = new int[24];
 
     BarChart stackedChart;
     int[] colorArray = new int[]{Color.BLUE,Color.RED};
@@ -218,12 +219,34 @@ public class ShowActivity extends AppCompatActivity {
     private ArrayList<BarEntry> dataValues1(){
         ArrayList<BarEntry> datavals = new ArrayList<>();
 
+        one_yes = yn[0];
+        one_no = yn[1];
+        two_yes = yn[2];
+        two_no = yn[3];
+        three_yes = yn[4];
+        three_no = yn[5];
+        four_yes = yn[6];
+        four_no = yn[7];
+        five_yes = yn[8];
+        five_no = yn[9] ;
+        six_yes = yn[10];
+        six_no = yn[11];
+        seven_yes = yn[12];
+        seven_no = yn[13];
+        eight_yes=yn[14];
+        eight_no = yn[15];
+        nine_yes = yn[16];
+        nine_no = yn[17];
+        ten_yes = yn[18];
+        ten_no = yn[19];
+        eleven_yes = yn[20];
+        eleven_no = yn[21];
+        twelve_yes = yn[22];
+        two_no = yn[23];
 
-
-
-
-        datavals.add(new BarEntry(0, new float[]{2,5,4}));
-
+        for(int i = 0;i<Global.length;i+=2){
+            datavals.add(new BarEntry(0, new float[]{yn[i],yn[i+1]}));
+        }
 
         return datavals;
     }
