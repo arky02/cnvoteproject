@@ -33,6 +33,8 @@ public class Problem7Activity extends AppCompatActivity {
     LinearLayout seven_1,seven_2;
     boolean real = false;
 
+    TextView seven_context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,8 @@ public class Problem7Activity extends AppCompatActivity {
         seven_2 = findViewById(R.id.seven_2);
 
         btn_home = findViewById(R.id.seven_btn_home);
+        seven_context = findViewById(R.id.seven_context);
+        seven_context.setText(""+Global.stringData.get(6));
 
         if(Global.real7){
             seven_1.setVisibility(View.GONE);

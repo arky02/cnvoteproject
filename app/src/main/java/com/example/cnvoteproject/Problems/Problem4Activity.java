@@ -32,7 +32,7 @@ public class Problem4Activity extends AppCompatActivity {
     String what ="";
     LinearLayout four_1,four_2;
     boolean real = false;
-
+    TextView four_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,8 @@ public class Problem4Activity extends AppCompatActivity {
         four_2= findViewById(R.id.four_2);
         btn_no = findViewById(R.id.four_btn_no);
         btn_home = findViewById(R.id.four_btn_home);
+        four_context = findViewById(R.id.four_context);
+        four_context.setText(""+Global.stringData.get(3));
 
         if(Global.real1){
             four_1.setVisibility(View.GONE);

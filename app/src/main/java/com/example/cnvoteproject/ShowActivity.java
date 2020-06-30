@@ -29,7 +29,6 @@ import java.util.List;
 public class ShowActivity extends AppCompatActivity {
 
 
-
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReference;
     private ChildEventListener mChild;
@@ -88,7 +87,6 @@ public class ShowActivity extends AppCompatActivity {
 
                 for (DataSnapshot messageData : dataSnapshot.getChildren()) {
                     String msg2 = messageData.getValue().toString();
-
                     Array.add(msg2);
                     // child 내에 있는 데이터만큼 반복합니다. for(int i=0;i<Array.size();i++){
                                 if(msg2.equals("안건1/찬성")){
@@ -142,21 +140,12 @@ public class ShowActivity extends AppCompatActivity {
                                 }
                             }
 
-
-
-
-
-
-
-
                 Log.d("one_yes", Integer.toString(one_yes));
                 Log.d("one_no", Integer.toString(one_no));
                 Log.d("2_yes", Integer.toString(two_yes));
                 Log.d("2_no", Integer.toString(two_no));
                 Log.d("3_no", Integer.toString(three_no));
                 Log.d("3_yes", Integer.toString(three_yes));
-
-
 
                 }
 
@@ -166,11 +155,6 @@ public class ShowActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
 
@@ -245,7 +229,7 @@ public class ShowActivity extends AppCompatActivity {
         two_no = yn[23];
 
         for(int i = 0;i<Global.length;i+=2){
-            datavals.add(new BarEntry(0, new float[]{yn[i],yn[i+1]}));
+            datavals.add(new BarEntry(new float[]{yn[i],yn[i+1]},0));
         }
 
         return datavals;

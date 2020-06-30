@@ -33,6 +33,7 @@ public class Problem6Activity extends AppCompatActivity {
     LinearLayout six_1,six_2;
     boolean real = false;
 
+    TextView six_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class Problem6Activity extends AppCompatActivity {
         six_1 =findViewById(R.id.six_1);
         six_2 = findViewById(R.id.six_2);
         btn_home = findViewById(R.id.six_btn_home);
+
+        six_context = findViewById(R.id.six_context);
+        six_context.setText(""+Global.stringData.get(5));
 
         if(Global.real6){
             six_1.setVisibility(View.GONE);

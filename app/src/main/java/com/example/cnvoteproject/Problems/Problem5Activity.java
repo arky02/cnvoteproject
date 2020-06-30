@@ -35,7 +35,7 @@ public class Problem5Activity extends AppCompatActivity {
     LinearLayout five_1,five_2;
     boolean real = false;
 
-
+    TextView five_context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +46,9 @@ public class Problem5Activity extends AppCompatActivity {
         btn_no = findViewById(R.id.five_btn_no);
         five_1 =findViewById(R.id.five_1);
         five_2 = findViewById(R.id.five_2);
+
+        five_context = findViewById(R.id.five_context);
+        five_context.setText(""+Global.stringData.get(4));
 
         if(Global.real5){
             five_1.setVisibility(View.GONE);
