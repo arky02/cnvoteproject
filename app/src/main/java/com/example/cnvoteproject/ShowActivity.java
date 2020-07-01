@@ -178,7 +178,7 @@ public class ShowActivity extends AppCompatActivity {
         ArrayList<BarEntry> datavals = new ArrayList<>();
 
 
-        for(int i = 0;i<(Global.length)*2;i+=2){
+        for(int i = 0;i<=(Global.length)*2-2;i+=2){
             datavals.add(new BarEntry(i, new float[]{yn[i],yn[i+1]}));
         }
 

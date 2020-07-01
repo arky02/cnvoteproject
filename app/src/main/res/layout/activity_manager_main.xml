@@ -8,39 +8,66 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:text="1. 학생들이 이번 회의 안건의 찬반투표를 위해\n 어플에 접속하기 위한 일회용 회의 참여 코드를 설정해주세요"/>
+
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:hint="설정 할 회의 참여 코드를 입력하세요"/>
+        android:inputType="number"
+        android:hint=""/>
     <Button
         android:id="@+id/btn_password"
         android:layout_width="250dp"
         android:layout_height="60dp"
+        android:textColor="#FFFFFF"
         android:text="회의 코드 설정하기"
+        android:background="#0288D1"
         android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:layout_marginTop="70dp"
+        android:textSize="20dp"
+        android:text="2. 이번 회의에 다룰 안건을 하나씩 입력해주세요"/>
     <EditText
-        android:layout_marginTop="20dp"
+        
         android:id="@+id/edt_com"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
         android:hint="추가 할 안건을 입력하세요"/>
     <Button
         android:id="@+id/btn_com"
         android:layout_width="250dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#FFFFFF"
         android:text="안건 추가하기"
+        android:background="#1976D2"
         android:layout_marginTop="2dp"/>
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="250dp"
+        android:background="#1976D2"
+        android:textColor="#FFFFFF"
         android:layout_height="60dp"
         android:text="안건 및 찬반 투표결과 초기화하기"
         android:layout_marginTop="1dp"/>
     <Button
         android:layout_width="250dp"
+        android:background="#303F9F"
+        android:textColor="#FFFFFF"
         android:layout_height="60dp"
-        android:text="통계보기"
+        android:text="저장하고 첫 패이지로 이동하기"
         android:layout_marginTop="20dp"
         android:id="@+id/btn_statistics"/>
 

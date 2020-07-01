@@ -29,13 +29,16 @@
             android:background="#4Df2f1f7"
             android:id="@+id/et_id"
             android:layout_width="350dp"
+            android:maxLines="1"
             android:layout_height="50dp" />
     <EditText
         android:layout_marginTop="10dp"
         android:hint="cnsanet PW"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:textColorHint="#ffffff"
         android:background="#4Df2f1f7"
+        android:maxLines="1"
         android:id="@+id/et_pw"
         android:layout_width="350dp"
         android:layout_height="50dp" />
