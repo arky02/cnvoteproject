@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_main);
 
+        if(Global.length != 12) {
+            for (int i = 0; i < 12 - Global.length; i++) {
+                Global.stringData.add("안건이 없습니다.");
+            }
+        }
+
         btn_data = findViewById(R.id.btn_data);
 
         image1 = BitmapFactory.decodeResource(getResources(), R.drawable.q1_1);
@@ -65,22 +71,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
+        mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mCardAdapter = new CardPagerAdapter();
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[0], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[1], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[2], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[3], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[4], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[5], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[6], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[7], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[8], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[9], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[10], null));
-        mCardAdapter.addCardItem(new CardItem(Global.stringdata[11], null));
+
+        if(Global.stringData.isEmpty()) {
+            Toast.makeText(MainActivity.this, "서버오류", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(0), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(1), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(2), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(3), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(4), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(5), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(6), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(7), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(8), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(9), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(10), null));
+            mCardAdapter.addCardItem(new CardItem(Global.stringData.get(11), null));
+        }
 
         mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
 
@@ -92,11 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //
+
     }
 
-
-    public static float dpToPixels(int dp, Context context) {
-        return dp * (context.getResources().getDisplayMetrics().density);
-    }
 }

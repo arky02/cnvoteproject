@@ -33,6 +33,7 @@ public class Problem10Activity extends AppCompatActivity {
     LinearLayout ten_1,ten_2;
     boolean real = false;
 
+    TextView ten_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,9 @@ public class Problem10Activity extends AppCompatActivity {
         ten_1 =findViewById(R.id.ten_1);
         ten_2 = findViewById(R.id.ten_2);
         btn_home = findViewById(R.id.ten_btn_home);
+
+        ten_context = findViewById(R.id.ten_context);
+        ten_context.setText(""+Global.stringData.get(9));
 
 
         btn_yes.setOnClickListener(new View.OnClickListener() {

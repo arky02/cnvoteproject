@@ -33,6 +33,7 @@ public class Problem11Activity extends AppCompatActivity {
     LinearLayout eleven_1,eleven_2;
     boolean real = false;
 
+    TextView eleven_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +42,11 @@ public class Problem11Activity extends AppCompatActivity {
 
         btn_yes = findViewById(R.id.eleven_btn_yes);
         btn_no = findViewById(R.id.eleven_btn_no);
+        btn_home = findViewById(R.id.eleven_btn_home);
         eleven_1 =findViewById(R.id.eleven_1);
         eleven_2 = findViewById(R.id.eleven_2);
+        eleven_context = findViewById(R.id.eleven_context);
+        eleven_context.setText(""+Global.stringData.get(10));
 
         if(Global.real11){
             eleven_1.setVisibility(View.GONE);

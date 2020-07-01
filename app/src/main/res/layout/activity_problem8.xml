@@ -31,11 +31,14 @@
         android:id="@+id/eight_1"
         android:visibility="visible">
     <TextView
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_marginTop="90dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/eight_context"
         android:padding="100dp"
-        android:background="@color/cardview_light_background"/>
+      />
 
 
 

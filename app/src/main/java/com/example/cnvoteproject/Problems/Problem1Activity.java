@@ -32,6 +32,7 @@ public class Problem1Activity extends AppCompatActivity {
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     String what ="";
     LinearLayout one_1,one_2;
+    TextView one_context;
 
 
     @Override
@@ -43,8 +44,8 @@ public class Problem1Activity extends AppCompatActivity {
         btn_no = findViewById(R.id.one_btn_no);
         one_1 =findViewById(R.id.one_1);
         one_2 = findViewById(R.id.one_2);
-
-
+        one_context = findViewById(R.id.one_context);
+        one_context.setText(""+Global.stringData.get(0));
         btn_home = findViewById(R.id.one_btn_home);
 
         if(Global.real1){

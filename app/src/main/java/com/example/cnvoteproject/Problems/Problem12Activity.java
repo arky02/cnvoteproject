@@ -33,7 +33,7 @@ public class Problem12Activity extends AppCompatActivity {
     LinearLayout twelve_1,twelve_2;
     boolean real = false;
 
-
+    TextView twelve_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,8 @@ public class Problem12Activity extends AppCompatActivity {
         btn_no = findViewById(R.id.twelve_btn_no);
         twelve_1 =findViewById(R.id.twelve_1);
         twelve_2 = findViewById(R.id.twelve_2);
+        twelve_context = findViewById(R.id.twelve_context);
+        twelve_context.setText(""+Global.stringData.get(11));
 
         btn_home = findViewById(R.id.twelve_btn_home);
         if(Global.real12){

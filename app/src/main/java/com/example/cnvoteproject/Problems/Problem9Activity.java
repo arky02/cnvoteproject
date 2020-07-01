@@ -34,6 +34,7 @@ public class Problem9Activity extends AppCompatActivity {
     LinearLayout nine_1,nine_2;
     boolean real = false;
 
+    TextView nine_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class Problem9Activity extends AppCompatActivity {
         nine_1 =findViewById(R.id.nine_1);
         nine_2 = findViewById(R.id.nine_2);
         btn_home = findViewById(R.id.nine_btn_home);
+        nine_context = findViewById(R.id.nine_context);
+        nine_context.setText(""+Global.stringData.get(8));
 
         if(Global.real9){
             nine_1.setVisibility(View.GONE);

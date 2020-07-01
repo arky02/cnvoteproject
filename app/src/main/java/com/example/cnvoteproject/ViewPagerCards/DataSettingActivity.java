@@ -22,12 +22,7 @@ public class DataSettingActivity extends AppCompatActivity {
 
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference = firebaseDatabase.getReference();
-
     ProgressBar progress;
-
-    String[] opinions = new String[12];
-    boolean parsingDone = true;
 
     public class FirebaseSet extends AsyncTask<String, Boolean, Boolean> {
 
@@ -39,22 +34,21 @@ public class DataSettingActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(String... strings) {
-            firebaseDatabase.getReference().addValueEventListener(new ValueEventListener() {
+
+            firebaseDatabase.getReference("opinion").addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        if(parsingDone && Parsing(snapshot.getValue()) != "") {
-                            Log.e("check", ""+(snapshot.getValue()));
-                            setData(Parsing(snapshot.getValue()));
-                        }
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for(DataSnapshot data : snapshot.getChildren()) {
+                        Log.e("check", ""+data.getValue());
+                        Global.stringData.add(data.getValue().toString());
+                        Global.length = Global.stringData.size();
                     }
                 }
 
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                public void onCancelled(@NonNull DatabaseError error) {
 
                 }
-
             });
             return true;
         }
@@ -64,11 +58,10 @@ public class DataSettingActivity extends AppCompatActivity {
             super.onPostExecute(aBoolean);
 
             progress.setIndeterminate(false);
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
-
-
     }
 
     @Override
@@ -80,34 +73,4 @@ public class DataSettingActivity extends AppCompatActivity {
         FirebaseSet firebaseSet = new FirebaseSet();
         firebaseSet.execute();
     }
-
-    public String Parsing(Object o) {
-        String data = o.toString();
-        StringBuffer stringBuffer = new StringBuffer();
-        int check = 0;
-        if(data.charAt(1) == 'l' && data.charAt(2) == 'o') return "";
-        for (int i = 0; ; i++) {
-            if(data.charAt(i) == '}'){
-                break;
-            }
-            if(check != 0) {
-                stringBuffer.append(data.charAt(i));
-            }
-            if(data.charAt(i) == '{') {
-                check ++;
-            }
-        }
-        parsingDone = false;
-        return stringBuffer.toString();
-    }
-
-    public void setData(String s){
-        String[] temp = s.split(", ");
-        Global.length = temp.length;
-        for (int i = 0; i < temp.length; i++) {
-            String[] temp2 = temp[i].split("=");
-            Global.stringdata[i] = temp2[1];
-        }
-    }
-
 }
