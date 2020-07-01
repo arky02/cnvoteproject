@@ -4,12 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowActivity">
+    tools:context=".ShowActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#CEDAF0">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안건별 찬반 투표결과"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginBottom="35dp"
+        android:textSize="50dp"
+        android:background="@drawable/buttondesign"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layourdesign2"
+    android:padding="25dp"
+    android:layout_margin="20dp">
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="650dp"/>
+</LinearLayout>
 
 
 </LinearLayout>

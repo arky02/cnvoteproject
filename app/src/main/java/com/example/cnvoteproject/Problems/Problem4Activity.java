@@ -45,7 +45,7 @@ public class Problem4Activity extends AppCompatActivity {
         btn_no = findViewById(R.id.four_btn_no);
         btn_home = findViewById(R.id.four_btn_home);
 
-        if(Global.real1){
+        if(Global.real4){
             four_1.setVisibility(View.GONE);
             four_2.setVisibility(View.VISIBLE);
         }

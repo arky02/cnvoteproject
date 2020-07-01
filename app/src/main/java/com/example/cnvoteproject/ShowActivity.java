@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.google.firebase.database.ChildEventListener;
@@ -33,34 +34,8 @@ public class ShowActivity extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReference;
     private ChildEventListener mChild;
-    private ListView listView;
-    private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<Object>();
 
-    int one_yes=0;
-    int two_yes=0;
-    int three_yes= 0;
-    int four_yes= 0;
-    int five_yes =0;
-    int six_yes =0;
-    int seven_yes = 0;
-    int eight_yes = 0;
-    int nine_yes =0;
-    int ten_yes =0;
-    int eleven_yes = 0;
-    int twelve_yes = 0;
-    int one_no = 0;
-    int two_no = 0;
-    int three_no = 0;
-    int four_no = 0;
-    int five_no = 0;
-    int six_no = 0;
-    int seven_no = 0;
-    int eight_no = 0;
-    int nine_no = 0;
-    int ten_no = 0;
-    int eleven_no = 0;
-    int twelve_no = 0;
     int[] yn = new int[24];
 
     BarChart stackedChart;
@@ -73,10 +48,6 @@ public class ShowActivity extends AppCompatActivity {
 
         stackedChart = findViewById(R.id.chart);
 
-        BarDataSet bardataset = new BarDataSet(dataValues1(), "BarSEt");
-        bardataset.setColors(colorArray);
-
-
         initDatabase();
 
 
@@ -87,76 +58,65 @@ public class ShowActivity extends AppCompatActivity {
 
 
                 for (DataSnapshot messageData : dataSnapshot.getChildren()) {
-                    String msg2 = messageData.getValue().toString();
 
+                    String msg2 = messageData.getValue().toString();
                     Array.add(msg2);
                     // child 내에 있는 데이터만큼 반복합니다. for(int i=0;i<Array.size();i++){
                                 if(msg2.equals("안건1/찬성")){
-                                    ++one_yes;
+                                    ++yn[0];
                                 }else if(msg2.equals("안건1/반대")){
-                                    ++one_no;
+                                    ++yn[1];
                                 }else if(msg2.equals("안건2/찬성")){
-                                    ++two_yes;
+                                    ++yn[2];
                                 }else if(msg2.equals("안건2/반대")){
-                                    ++two_no;
+                                    ++yn[3];
                                 }else if(msg2.equals("안건3/찬성")){
-                                    ++three_yes;
+                                    ++yn[4];
                                 }else if(msg2.equals("안건3/반대")){
-                                    ++three_no;
+                                    ++yn[5];
                                 }else if(msg2.equals("안건4/찬성")){
-                                    ++four_yes;
+                                    ++yn[6];
                                 }else if(msg2.equals("안건4/반대")){
-                                    ++four_no;
+                                    ++yn[7];
                                 }else if(msg2.equals("안건5/찬성")){
-                                    ++five_yes;
+                                    ++yn[8];
                                 }else if(msg2.equals("안건5/반대")){
-                                    ++five_no;
+                                    ++yn[9];
                                 }else if(msg2.equals("안건6/찬성")){
-                                    ++six_yes;
+                                    ++yn[10];
                                 }else if(msg2.equals("안건6/반대")){
-                                    ++six_no;
+                                    ++yn[11];
                                 }else if(msg2.equals("안건7/찬성")){
-                                    ++seven_yes;
+                                    ++yn[12];
                                 }else if(msg2.equals("안건7/반대")){
-                                    ++seven_no;
+                                    ++yn[13];
                                 }else if(msg2.equals("안건8/찬성")){
-                                    ++eight_yes;
+                                    ++yn[14];
                                 }else if(msg2.equals("안건8/반대")){
-                                    ++eight_no;
+                                    ++yn[15];
                                 }else if(msg2.equals("안건9/찬성")){
-                                    ++nine_yes;
+                                    ++yn[16];
                                 }else if(msg2.equals("안건9/반대")){
-                                    ++nine_no;
+                                    ++yn[17];
                                 }else if(msg2.equals("안건10/찬성")){
-                                    ++ten_yes;
+                                    ++yn[18];
                                 }else if(msg2.equals("안건10/반대")){
-                                    ++ten_no;
+                                    ++yn[19];
                                 }else if(msg2.equals("안건11/찬성")){
-                                    ++eleven_yes;
+                                    ++yn[20];
                                 }else if(msg2.equals("안건11/반대")){
-                                    ++eleven_no;
+                                    ++yn[21];
                                 }else if(msg2.equals("안건12/찬성")){
-                                    ++twelve_yes;
+                                    ++yn[22];
                                 }else if(msg2.equals("안건12/반대")){
-                                    ++twelve_no;
+                                    ++yn[23];
                                 }
                             }
-
-
-
-
-
-
-
-
-                Log.d("one_yes", Integer.toString(one_yes));
-                Log.d("one_no", Integer.toString(one_no));
-                Log.d("2_yes", Integer.toString(two_yes));
-                Log.d("2_no", Integer.toString(two_no));
-                Log.d("3_no", Integer.toString(three_no));
-                Log.d("3_yes", Integer.toString(three_yes));
-
-
+                BarDataSet bardataset = new BarDataSet(dataValues1(), "안건투표결과");
+                bardataset.setColors(colorArray);
+                stackedChart.animateY(5000);
+                BarData barData = new BarData(bardataset);
+                stackedChart.setData(barData);
 
                 }
 
@@ -172,14 +132,12 @@ public class ShowActivity extends AppCompatActivity {
 
 
     }
-
-
-
     private void initDatabase() {
 
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference("log");
         mReference.child("log").setValue("check");
+
 
         mChild = new ChildEventListener() {
 
@@ -219,35 +177,20 @@ public class ShowActivity extends AppCompatActivity {
     private ArrayList<BarEntry> dataValues1(){
         ArrayList<BarEntry> datavals = new ArrayList<>();
 
-        one_yes = yn[0];
-        one_no = yn[1];
-        two_yes = yn[2];
-        two_no = yn[3];
-        three_yes = yn[4];
-        three_no = yn[5];
-        four_yes = yn[6];
-        four_no = yn[7];
-        five_yes = yn[8];
-        five_no = yn[9] ;
-        six_yes = yn[10];
-        six_no = yn[11];
-        seven_yes = yn[12];
-        seven_no = yn[13];
-        eight_yes=yn[14];
-        eight_no = yn[15];
-        nine_yes = yn[16];
-        nine_no = yn[17];
-        ten_yes = yn[18];
-        ten_no = yn[19];
-        eleven_yes = yn[20];
-        eleven_no = yn[21];
-        twelve_yes = yn[22];
-        two_no = yn[23];
 
-        for(int i = 0;i<Global.length;i+=2){
-            datavals.add(new BarEntry(0, new float[]{yn[i],yn[i+1]}));
+        for(int i = 0;i<(Global.length)*2;i+=2){
+            datavals.add(new BarEntry(i, new float[]{yn[i],yn[i+1]}));
         }
 
         return datavals;
+    }
+    private ArrayList votes(){
+        ArrayList votes= new ArrayList<>();
+
+        for(int i = 0;i<(Global.length)*2;i+=2){
+            votes.add("안건"+(i+2)/2);
+        }
+
+        return votes;
     }
 }

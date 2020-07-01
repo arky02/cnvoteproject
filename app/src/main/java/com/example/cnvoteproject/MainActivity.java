@@ -28,6 +28,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //TODO 그래프, 크기조정, 안건 안에 글씨 띄우기, 로그인,차트띄울떄 경고문수정
+
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference();
     List data = new ArrayList();
